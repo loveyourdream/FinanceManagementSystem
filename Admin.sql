@@ -1,0 +1,38 @@
+--------------------------------------------------------
+--  File created - Friday-August-09-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ADMIN
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."ADMIN" 
+   (	"ADMINID" NUMBER(20,0), 
+	"ADMINNAME" VARCHAR2(20 BYTE), 
+	"USERNAME" VARCHAR2(20 BYTE), 
+	"PASSSWORD" VARCHAR2(20 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into HR.ADMIN
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index ADMIN_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."ADMIN_PK" ON "HR"."ADMIN" ("ADMINID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table ADMIN
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."ADMIN" ADD CONSTRAINT "ADMIN_PK" PRIMARY KEY ("ADMINID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "HR"."ADMIN" MODIFY ("ADMINID" NOT NULL ENABLE);

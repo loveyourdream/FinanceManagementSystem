@@ -1,0 +1,39 @@
+--------------------------------------------------------
+--  File created - Friday-August-09-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."PRODUCT" 
+   (	"PID" NUMBER(10,0), 
+	"PNAME" VARCHAR2(20 BYTE), 
+	"PPRICE" NUMBER(20,0), 
+	"PROCESSINGFEE" NUMBER(20,0), 
+	"DESCRIPTION" VARCHAR2(100 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into HR.PRODUCT
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index PRODUCT_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."PRODUCT_PK" ON "HR"."PRODUCT" ("PID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."PRODUCT" ADD CONSTRAINT "PRODUCT_PK" PRIMARY KEY ("PID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "HR"."PRODUCT" MODIFY ("PID" NOT NULL ENABLE);

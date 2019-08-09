@@ -1,0 +1,37 @@
+--------------------------------------------------------
+--  File created - Friday-August-09-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PAYMENT
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."PAYMENT" 
+   (	"PAYMENTIID" NUMBER(20,0), 
+	"PAYMENTMODE" VARCHAR2(20 BYTE), 
+	"PDATE" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into HR.PAYMENT
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index PAYUMENT_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HR"."PAYUMENT_PK" ON "HR"."PAYMENT" ("PAYMENTIID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table PAYMENT
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."PAYMENT" ADD CONSTRAINT "PAYUMENT_PK" PRIMARY KEY ("PAYMENTIID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "HR"."PAYMENT" MODIFY ("PAYMENTIID" NOT NULL ENABLE);
